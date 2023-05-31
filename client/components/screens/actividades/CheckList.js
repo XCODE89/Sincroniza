@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
+import Tarea from './tarea';
+
 const Checklist = () => {
     //? seteamos los valores de items con datos que deberian venir de la base de datos
   const [items, setItems] = useState([
@@ -18,23 +20,24 @@ const Checklist = () => {
   };
 
   
-  const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => toggleCheck(item.id)}>
-      <View style={styles.item}>
-        <Text style={item.checked ? styles.checkedText : styles.uncheckedText}>{item.text}</Text>
-      </View>
-    </TouchableOpacity>
-  );
+  // const renderItem = ({ item }) => (
+  //   <TouchableOpacity onPress={() => toggleCheck(item.id)}>
+  //     <View style={styles.item}>
+  //       <Text style={item.checked ? styles.checkedText : styles.uncheckedText}>{item.text}</Text>
+  //     </View>
+  //   </TouchableOpacity>
+  // );
 
   return (
     <View style={styles.container}>
       <Text>Fecha - Componente</Text>
-      <FlatList
+      <Tarea/>
+      {/* <FlatList
         data={items}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
         style={styles.list}
-      />
+      /> */}
     </View>
   );
 };

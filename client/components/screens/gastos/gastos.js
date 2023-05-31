@@ -1,8 +1,13 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import Constants from "expo-constants";
+
+import WelcomeBar from '../../welcomeBar';
+
 const Gastos = () => {
     return (
-        <View>
+        <View style={styles.container}>
+            <WelcomeBar/>
             <TextInput style={styles.input} placeholder='Busca el Proyecto o sin Proyecto'/>
             <View style={styles.inputCont}>
                 <TextInput style={styles.input} placeholder='*Buscar anticipo'/>
@@ -37,6 +42,9 @@ const Gastos = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginTop: Constants.statusBarHeight
+      },
     inputCont : {
         padding: 5,
         flexDirection: "row"

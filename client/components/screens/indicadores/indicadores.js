@@ -1,8 +1,13 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet  } from 'react-native';
+import Constants from "expo-constants";
+
+import WelcomeBar from '../../welcomeBar';
+
 const Indicadores = () => {
     return (
-        <View>
+        <View style={styles.container}>
+            <WelcomeBar/>
             <TextInput style={styles.input} placeholder='Busca el Proyecto o sin Proyecto'/>
             <TextInput style={styles.input} placeholder='Fecha inicio - Fecha fin'/>
             <View style={styles.inputCont}>
@@ -32,6 +37,9 @@ const Indicadores = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginTop: Constants.statusBarHeight
+      },
     inputCont : {
         padding: 5,
         flexDirection: "row",

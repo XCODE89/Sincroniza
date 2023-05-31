@@ -1,5 +1,4 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 
 import Actividades from "./screens/actividades/actividades";
@@ -11,9 +10,9 @@ const Tab = createBottomTabNavigator();
 const Home = () => {
     return (
             <Tab.Navigator>
-                <Tab.Screen name="Actividades" component={Actividades} />
-                <Tab.Screen name="Gastos" component={Gastos} />
-                <Tab.Screen name="Indicadores" component={Indicadores} />
+                <Tab.Screen name="Actividades" component={Actividades} options={{headerShown:false}}/>
+                <Tab.Screen name="Gastos" component={Gastos} options={{headerShown:false}}/>
+                <Tab.Screen name="Indicadores" component={Indicadores} options={{headerShown:false}}/>
             </Tab.Navigator>
     )
 }
