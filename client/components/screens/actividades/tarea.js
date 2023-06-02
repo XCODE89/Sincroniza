@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput } from "react-native"
 import { CheckBox } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Time from "./time"
+import Camera from './camera';
 
 const Tarea = () => {
     const [checked, setChecked] = useState(false);
@@ -18,14 +19,16 @@ const Tarea = () => {
                 checked={checked}
                 onPress={handleCheckboxToggle}
             />
-            <TouchableOpacity style={styles.button}>
-                <Text>Tiempo</Text>
-            </TouchableOpacity>
+            <View>
+                <Time/>
+            </View>
             <TouchableOpacity style={styles.button}>
                 <Text>...</Text>
             </TouchableOpacity>
+            
+<Camera/>
+
             <TouchableOpacity style={styles.button}>
-            <Icon name="camera" size={20} color="black" />
             </TouchableOpacity>
         </View>
     )
@@ -45,6 +48,23 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         justifyContent: "center"
     },
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semitransparente para el modal
+      },
+      modalContent: {
+        backgroundColor: 'white',
+        width: 200,
+        padding: 10,
+        borderRadius: 10,
+      },
+      hour: {
+        flexDirection: "row",
+        margin: 10,
+        justifyContent: "space-around"
+      }
 });
 
 export default Tarea

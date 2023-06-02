@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { ScrollView, View, TextInput, StyleSheet } from 'react-native';
 import Constants from "expo-constants";
 
 import WelcomeBar from '../../welcomeBar';
@@ -8,11 +8,11 @@ import Checklist from './CheckList';
 
 const Actividades = () => {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <WelcomeBar/>
             <TextInput style={styles.input} placeholder='Escriba para buscar el proyecto'></TextInput>
             <Checklist/>
-        </View>
+        </ScrollView>
     )
 }
 const styles = StyleSheet.create({
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
       backgroundColor: "lightgrey",
       margin: 10,
       borderRadius: 10
-    },
+    }
   });
 export default Actividades
