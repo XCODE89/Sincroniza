@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput } from "react-native"
+import { View, Text, StyleSheet } from "react-native"
 import { CheckBox } from 'react-native-elements';
-import Time from "./time"
+import Time from "./time";
+import Entregables from './entregables';
 import Camera from './camera';
 
 const Tarea = () => {
@@ -14,22 +15,10 @@ const Tarea = () => {
     return (
         <View style={styles.container}>
             <Text>tarea index</Text>
-            <CheckBox 
-                title=""
-                checked={checked}
-                onPress={handleCheckboxToggle}
-            />
-            <View>
-                <Time/>
-            </View>
-            <TouchableOpacity style={styles.button}>
-                <Text>...</Text>
-            </TouchableOpacity>
-            
-<Camera/>
-
-            <TouchableOpacity style={styles.button}>
-            </TouchableOpacity>
+            <CheckBox title="" checked={checked} onPress={handleCheckboxToggle}/>
+            <Time/>
+            <Entregables/>
+            <Camera/>
         </View>
     )
 }
